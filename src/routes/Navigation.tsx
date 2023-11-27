@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, NavLink, Navigate } from "react-router-dom"
 import logo from '../logo.svg'
+import { RegisterPage } from "../03-forms/pages/RegisterPage"
+import { FormikBasicPage } from "../03-forms/pages/FormikBasicPage"
 export const Navigation = () => {
   return (
     <BrowserRouter>
@@ -8,11 +10,11 @@ export const Navigation = () => {
                 <img src={ logo } alt="React Logo" />
             <ul>
                 <li>
-                    <NavLink to="/shopping" className={ ({ isActive }) => isActive ? 'nav-active' : '' }>Shopping</NavLink>
+                    <NavLink to="/register" className={ ({ isActive }) => isActive ? 'nav-active' : '' }>Register Page</NavLink>
                 </li>
 
                 <li>
-                    <NavLink to="/about" className={ ({ isActive }) => isActive ? 'nav-active' : '' }>About</NavLink>
+                    <NavLink to="/formik-basic" className={ ({ isActive }) => isActive ? 'nav-active' : '' }>Formik Basic</NavLink>
                 </li>
 
                 <li>
@@ -22,9 +24,9 @@ export const Navigation = () => {
             </nav>
 
             <Routes>
-                <Route path="about" element={<h1>About Page</h1>} />
+                <Route path="formik-basic" element={<FormikBasicPage />} />
                 <Route path="users" element={<h1>Users Page</h1>} />
-                <Route path="shopping" element={<h1>Shopping Page</h1>} />
+                <Route path="register" element={<RegisterPage />} />
                 <Route path="/*" element={<Navigate to="/shopping" replace />} />
             </Routes>
 
