@@ -27,11 +27,10 @@ export const FormikComponents = () => {
             .max(15, "Debe de tener 15 caracteres o menos")
             .required("Requerido"),
           email: Yup.string().email("Email invalido").required("Requerido"),
-          terms: Yup.boolean()
-            .isTrue('Debe de aceptar las condiciones'),
+          terms: Yup.boolean().isTrue("Debe de aceptar las condiciones"),
           jobType: Yup.string()
-            .required('Requerido')
-            .notOneOf(['it-junior'], 'Esta opción no es permitida')
+            .required("Requerido")
+            .notOneOf(["it-junior"], "Esta opción no es permitida"),
         })}
       >
         {(formik) => (
